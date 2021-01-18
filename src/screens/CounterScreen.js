@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, SafeAreaView } from 'react-native';
 
 const CounterScreen = () => {
   const [currentCounter, setCurrentCounter] = useState(0);
@@ -13,7 +13,7 @@ const CounterScreen = () => {
   }
 
   return (
-    <View>
+    <SafeAreaView>
       <Button
       onPress={increaseCounter}
       title="Increase"
@@ -23,7 +23,7 @@ const CounterScreen = () => {
       title="Decrease"
     />
       <Text style={styles.counterStyle}>Current Count: {currentCounter}</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 

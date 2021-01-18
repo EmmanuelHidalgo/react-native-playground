@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View, SafeAreaView } from 'react-native';
 import ImageDetail from '../screens/components/ImageDetail';
 
 
@@ -9,7 +9,7 @@ const ImageScreen = () => {
     { title: "Beach", imageSource: require('../../assets/beach.jpg'),score: 1 },
     { title: "Mountain", imageSource: require('../../assets/mountain.jpg'), score: 5 }
   ]
-  return <View>
+  return <SafeAreaView>
       {places.map((place, index) => {
         return <ImageDetail
           key={index}
@@ -18,7 +18,7 @@ const ImageScreen = () => {
           score={place.score}
         />
       })}
-  </View>
+  </SafeAreaView>
 }
 
 const styles = StyleSheet.create({

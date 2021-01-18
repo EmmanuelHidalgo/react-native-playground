@@ -1,10 +1,14 @@
 import React, {useContext }  from 'react';
-import { StyleSheet, View,Text, Image, FlatList } from 'react-native';
+import { StyleSheet, View,Text, Image, FlatList, Dimensions } from 'react-native';
 import { AmiiboContext } from '../../context/amiiboContext';
 
 
 const AmiiboList = () => {
   const { amiiboData } = useContext(AmiiboContext);
+  const { width } = Dimensions.get('screen');
+
+  const imageW = width * 0.7;
+  const imageH = imageW * 1.54;
 
   if(amiiboData.length === 0) {
     return <View style={{padding: 16}}>
@@ -14,12 +18,23 @@ const AmiiboList = () => {
 
 
   if (amiiboData.amiibo) {
-    return <View style={{padding: 16}}>
+    return <View>
       <FlatList
       data={amiiboData.amiibo}
-      renderItem={({item}) => <Image source={{uri: item.image}}
-      style={{width: 400, height: 600}}
-      />}
+      keyExtractor={(_, index) => index.toString()}
+      pagingEnabled
+      renderItem={({item}) =>
+        <View style={{width, justifyContent:'center', alignItems:'center'}}>
+          <Image source={{uri: item.image}}
+            style={{
+              width: imageW,
+              height: imageH,
+              resizeMode: 'stretch',
+              borderRadius: 16
+            }}
+          />
+        </View>
+      }
       />
   </View>
   }
@@ -27,7 +42,8 @@ const AmiiboList = () => {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 45
+    fontSize: 24,
+    color: '#fff'
   }
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View, SafeAreaView } from 'react-native';
 import { AmiiboProvider } from '../context/amiiboContext';
 
 import SearchBar from '../screens/components/SearchBar';
@@ -9,14 +9,10 @@ import  AmiiboList from '../screens/components/AmiiboList';
 const AmiiboScreen = () => {
   return (
     <AmiiboProvider>
-      <View style={{flex: 1, width: '100%'}}>
-          <View>
+      <SafeAreaView style={{flex: 1}}>
             <SearchBar />
-          </View>
-          <View>
             <AmiiboList />
-          </View>
-      </View>
+      </SafeAreaView>
     </AmiiboProvider>
   )
 }

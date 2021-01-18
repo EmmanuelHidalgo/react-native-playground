@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, Button, FlatList } from 'react-native';
+import { Text, StyleSheet, View, Button, FlatList, SafeAreaView } from 'react-native';
 
 const ColorScreen = () => {
 
@@ -10,7 +10,7 @@ const ColorScreen = () => {
   }
 
   return (
-    <View>
+    <SafeAreaView style={{justifyContent:'center', alignItems: 'center'}}>
       <Button
         title="Add a color"
         onPress={generateRandomColor}
@@ -22,7 +22,7 @@ const ColorScreen = () => {
           return <View style={{height: 100, width: 100, backgroundColor: item}}/>
         }}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 

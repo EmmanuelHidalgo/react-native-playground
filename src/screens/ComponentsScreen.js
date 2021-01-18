@@ -1,14 +1,14 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View, SafeAreaView } from 'react-native';
 
 const ComponentsScreen = () => {
   const name = 'Emmanuel';
 
   return (
-    <View>
+    <SafeAreaView>
       <Text style={styles.header}>Getting started with React Native!</Text>
       <Text style={styles.subheader}>My name is {name}</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 

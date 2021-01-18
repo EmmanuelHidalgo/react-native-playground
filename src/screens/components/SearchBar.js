@@ -21,7 +21,7 @@ const SearchBar = () => {
       <TextInput
         value={term}
         onChangeText={onChangeTerm}
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '80%' }}/>
+        style={{ height: 40, borderColor: 'gray', borderWidth: 1, width: '80%'}}/>
         <Button
           title="Search"
           style={{width: '20%'}}
